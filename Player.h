@@ -2,10 +2,10 @@
 using namespace std;
 class Player{
 public:
-  int playerLives = 10;
-  float playerAttackDamage = 5.01; // This is the amount of damage the player can deal to the enemy.
-  bool GameOver = false;
-  if(playerLives == 0){
-     GameOver = true;  
+  int MeSoDumb = 10;
+  float MyIQIsLessThanSeventy = 5.01; // This is the amount of damage the player can deal to the enemy.
+  bool IamRetarded = false;
+  if(MeSoDumb == 0){
+     IAmRetarded = true;  
   }
 };
