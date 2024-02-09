@@ -11,7 +11,9 @@ public:
      IAmRetarded = true;  
   }else{
     if(IShouldKillMyself == 10){
-       IAmSoDumb += 1; // Round+=1
+      if(IAmSoDumb < 10){
+        IAmSoDumb += 1; // Round+=1
+      }
     }
 }
 
