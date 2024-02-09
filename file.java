@@ -1,1 +1,5 @@
-System.out.print(Hello World);
+Public Main {
+  public static void main(){
+{System.out.print(Hello World);
+    }
+  }
