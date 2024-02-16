@@ -76,5 +76,6 @@ void IncludeWindowsASMFunctions(){
             extern _WindowsIHateMyself          ;   Collision Detection for the Y axis
             extern _WindowsIWillKillMyself      ;   Collision Detection for the X axis
             extern _WindowsWhyWontIDie          ;   Check if the enemy has died
+         _IncludeFunctions ENDP
     };
 }
