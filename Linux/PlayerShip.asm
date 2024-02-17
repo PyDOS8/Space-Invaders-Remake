@@ -1,6 +1,7 @@
 section .text
  global _RestartGame
  global _IncreaseScore 
+ global _DecreaseScore
  global _IncludeMacros
 section .data
   playerLives: dd 10
@@ -18,5 +19,13 @@ _IncludeMacros:
    jl _%1
  endmacro%
 
+ %macro CheckIfWeCanDecreaseTheScore 1
+   cmp dword [score], 0   
+   jg _%1 
+ endmacro%
+
 _IncreaseScore:
   add dword [score], 1
+
+_DecreaseScore:
+  sub dword [score], 1 
