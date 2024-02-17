@@ -3,43 +3,40 @@ using namespace std;
 void IncludeLinuxASMFunctions(){
    __asm{
     
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ;       Linux                           ;
-    ;   The Linux version uses OpenGL       ;
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ;   Including Needed Assembly files ;
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-    .include "Linux/Graphics32.asm"
-    .include "Linux/PlayerShip.asm"
-    .include "Linux/EnemyShip.asm"
-    
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ;    DOCUMENTATION FOR ASSEMBLY FILES                                                ;
-    ;    The '{OS}/Graphics32.asm' file uses OpenGL to draw graphics in 32 bit mode.     ;
-    ;    The '{OS}/PlayerShip.asm' file is all of the functions for the player.          ;
-    ;    The '{OS}/EnemyShip.asm' file is all of the functions for the enemy.            ; 
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    
-    
-    
-    ;;;;;;;;;;;;;;;;;;;;;
-    ; Player functions  ;
-    ;;;;;;;;;;;;;;;;;;;;;
-
-    extern _IAmSoStupid             ; Collision Detection for the Y Axis
-    extern _IHaveAnIQBelowSeventy   ; Collision Detection for the X axis
-    extern _IHaveANIQBelowTwenty    ; Check if player has died
-
-    ;;;;;;;;;;;;;;;;;;;;;;;
-    ; Enemy functions     ;
-    ;;;;;;;;;;;;;;;;;;;;;;;
-
-    extern _IHateMyself             ;  Collision Detection for the Y axis
-    extern _IWillKillMyself         ;  Collsion Detection for the X axis
-    extern _WhyWontIDie             ;  Check if the enemy has died
+       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+       ;       Linux                           ;
+       ;   The Linux version uses OpenGL       ;
+       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+   
+       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+       ;   Including Needed Assembly files ;
+       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+   
+       .include "Linux/Graphics32.asm"
+       .include "Linux/PlayerShip.asm"
+       .include "Linux/EnemyShip.asm"
+       
+       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+       ;    DOCUMENTATION FOR ASSEMBLY FILES                                                ;
+       ;    The '{OS}/Graphics32.asm' file uses OpenGL to draw graphics in 32 bit mode.     ;
+       ;    The '{OS}/PlayerShip.asm' file is all of the functions for the player.          ;
+       ;    The '{OS}/EnemyShip.asm' file is all of the functions for the enemy.            ; 
+       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+       
+       
+       
+       ;;;;;;;;;;;;;;;;;;;;;
+       ; Player functions  ;
+       ;;;;;;;;;;;;;;;;;;;;;
+   
+      extern _RestartGame    ; This function will reset all of the values inside the `playerShip.asm` file
+      extern _IncludeMacros  ; This function holds all of the macros for the game (eg. `CheckIfWeCanIncreaseScore` etc)
+      extern _IncreaseScore  ; This function will increase the score by 1
+      extern _DecreaseScore  ; This function will decrease the score by 1
+   
+      ; extern _CheckForPlayerYAxisCollisons
+      ; extern _CheckForPlayerXAxisCollisions
+      ; extern _CheckForGameOver 
    };
 }
 
