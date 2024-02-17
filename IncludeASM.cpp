@@ -66,7 +66,7 @@ void IncludeWindowsASMFunctions(){
             ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
             extern _WindowsFunctionIAmSoStupid   ; Collision Detection for the Y axis
-            extern _WindowsIHaveAnIQBelowSeventy ;  Collision Detection for the Y axis 
+            extern _WindowsIHaveAnIQBelowSeventy ;  Collision Detection for the X axis 
             extern _WindowsWhyWontIDie           ;  Check if the player has died
 
             ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
