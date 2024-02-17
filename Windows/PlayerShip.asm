@@ -14,7 +14,7 @@ _StartGame PROC
   
 _StartGame ENDP
 _CheckForGameOver  PROC ; Check if the game is over
-    CMP DWORD [IAmRetarded], 1
+    CMP  [IAmRetarded], 1
     JL _StartGame 
     JE _RestartGame
 _CheckForGameOver ENDP
