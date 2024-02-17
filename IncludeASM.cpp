@@ -33,10 +33,15 @@ void IncludeLinuxASMFunctions(){
       extern _IncludeMacros  ; This function holds all of the macros for the game (eg. `CheckIfWeCanIncreaseScore` etc)
       extern _IncreaseScore  ; This function will increase the score by 1
       extern _DecreaseScore  ; This function will decrease the score by 1
+      
+         
+      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+      ;       Non-Existant Functions            ;
+      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
    
       ; extern _CheckForPlayerYAxisCollisons
       ; extern _CheckForPlayerXAxisCollisions
-      ; extern _CheckForGameOver 
+      ; extern _CheckForGameOver
    };
 }
 
