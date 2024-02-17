@@ -3,6 +3,7 @@ section .text
  global _IncreaseScore 
  global _DecreaseScore
  global _IncludeMacros
+ global _CheckIfPlayerWon
 section .data
   playerLives: dd 10
   score: dd  0
@@ -29,3 +30,7 @@ _IncreaseScore:
 
 _DecreaseScore:
   sub dword [score], 1 
+
+_CheckIfPlayerWon:
+  cmp dword [score], 10
+  je _RestartGame
