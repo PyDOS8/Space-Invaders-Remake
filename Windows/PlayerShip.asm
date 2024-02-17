@@ -1,12 +1,17 @@
-.80836
+.386
 .model stack, flat
 .data
- playerLives: dd 0
- GameOver: dd 0
- IHaveAnIQBelowSeventy: dd 0 ; Times Reseted
+ MyIQIsLessThanSeventy: dd 10 ; Player lives
+ IAmRetarded: dd 0 ; Game Over
  IAmSoDumb: dd 0 ; Score 
 .text
- _WindowsIAmSoStupid PROC ; Check if we can restart the game
-   CMP DWORD PTR [GameOver], 0
-   JG _ResetGame
-   JLE _PlayGame
+_RestartGame PROC ; Reset player variables 
+    MOV PTR DWORD [MyIQIsLessThanSeventy], 10
+    MOV PTR DWORD [IAmRetarded], 0 
+    MOV PTR DWORD [IAmSoDumb], 0
+
+_CheckForGameOver  PROC ; Check if the game is over
+    CMP PTR DWORD [IAmRetarded], 1
+    JL _StartGame 
+    JE _RestartGame
+_CheckForGameOver ENDP
