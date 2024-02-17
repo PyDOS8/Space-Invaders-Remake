@@ -10,7 +10,9 @@ _RestartGame PROC ; Reset player variables
     MOV DWORD [IAmRetarded], 0 
     MOV DWORD [IAmSoDumb], 0
 _RestartGame ENDP
-
+_StartGame PROC
+  
+_StartGame ENDP
 _CheckForGameOver  PROC ; Check if the game is over
     CMP DWORD [IAmRetarded], 1
     JL _StartGame 
