@@ -35,9 +35,10 @@ void IncludeLinuxASMFunctions(){
       extern _DecreaseScore  ; This function will decrease the score by 1
       
          
-      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-      ;       Non-Existant Functions            ;
-      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+      ;       Non-Existant Functions                                             ;
+      ;       These functions are for later use  which is way they are commented ;
+      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
    
       ; extern _CheckForPlayerYAxisCollisons
       ; extern _CheckForPlayerXAxisCollisions
