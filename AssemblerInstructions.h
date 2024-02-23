@@ -71,7 +71,7 @@
 
  // Pointer
 #ifndef POINTER
-    #define  pointer " POINTER"
+    #define  pointer "POINTER"
 #endif  
  
 // Move 
