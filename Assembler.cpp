@@ -9,5 +9,10 @@ int main(){
         {"IHateMyself": 0x114000},
         {"SomeonePleaseKillMe": 0},
   };
+
+  // GPU machine code instructions
+  map<string, int>IHaveAnIQBelowADog = {
+        {"", 0},
+  };
   return 0;
 }
