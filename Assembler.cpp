@@ -10,6 +10,7 @@ int main(){
     And `IHaveAnIQBelowADog` is the GPU machine code 
     list
   */
+
   // CPU machine code instructions
   map<string, int>IAmSoDumb = {
         {"IHateMyself": 0x114000},
