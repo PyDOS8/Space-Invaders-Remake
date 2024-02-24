@@ -1,8 +1,10 @@
 import os
 machineCode = {
         "add": "0x0EE",
+        "subtract": "0x4",
+        "multiply": "0x7",
+        "divide": "0x8",
 }
-
 while True:
     AssemblyFile = input("Enter an Assembly file > ")
     if os.path.exists(AssemblyFile):
