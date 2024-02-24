@@ -6,7 +6,8 @@ using namespace std;
 int main(){   
   /*
     `IAmSoDumb` is the machine code instruction list for the CPU architecture 
-    And `IHaveAnIQBelowADog` is the GPU machine code list
+    And `IHaveAnIQBelowADog` is the GPU machine code 
+    list
   */
   // CPU machine code instructions
   map<string, int>IAmSoDumb = {
