@@ -6,7 +6,7 @@ using namespace std;
 int main(){   
   // CPU machine code instructions
   map<string, int>IAmSoDumb = {
-        {"IHateMyself": 114000},
+        {"IHateMyself": 0x114000},
   };
   return 0;
 }
