@@ -158,3 +158,14 @@
 #ifndef DECIMAL 
     #define DECIMAL "DECIMAL"  
 #endif
+
+// Inline Java
+#ifndef JAVA
+    #define JAVA "_JAVA"
+#endif
+
+// End inline Java
+#ifndef ENDJava
+    #define ENDJava "_ENDJava"
+#endif
+
