@@ -1,21 +1,26 @@
 section .text
- global _RestartGame 
-section .data
- MyIQIsLessThanSeventy: dd 10 ; Player lives
- IAmRetarded: dd 0 ; Game Over
- IAmSoDumb: dd 0 ; Score 
-section .text
-  global _RestartGame 
-  global _StartGame
-  global _CheckForGameOver
-  global _ExitGame
+  global _CheckForYAxisCollision
+  global _CheckPlayerLives
+  global _GameOver
+  global _CheckForXAxisCollision
 
-_CheckForGameOver:
-  cmp dword [IAmRetarded], 1
-  je _RestartGame
-  jl _StartGame
+section .data 
+  PlayerYAxis: dd 5 
+  playerLives: dd 10
+  playerXAxis: dd 5
 
-_ExitGame:
-  extern _ExitProcess@4
-  push 0
-  call _ExitProcess@4
+_CheckForYAxisCollision:
+    .include "EnemyShip.asm";
+    test dword [playerYAxis], dword [enemyYAxis]
+    jz _CheckPlayerLives
+
+_CheckForXAxisCollision:
+    .include "EnemyShip.asm"
+    test dword [playerXAxis], dword [enemyXAxis]
+    jz _CheckPlayerLives
+
+_CheckPlayerLives:
+    .include "GameOverScreen.asm"
+    extern _GameOverScreen
+    test dword [playerLives], 0  
+    jz _GameOverScreen
