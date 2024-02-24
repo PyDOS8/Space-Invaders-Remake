@@ -7,7 +7,8 @@ int main(){
   /*
     `IAmSoDumb` is the machine code instruction map 
     for the CPU architecture 
-    And `IHaveAnIQBelowADog` is the machine code instruction map for the GPU architecture
+    And `IHaveAnIQBelowADog` is the machine code 
+    instruction map for the GPU architecture
   */
 
   // CPU machine code instructions
