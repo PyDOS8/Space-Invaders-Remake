@@ -12,7 +12,7 @@ section .data
 	RightMainMenu: db "*"
 	RightMenuLength: equ $ - RightMainMenu
 	colorCommand: db "color "
-	playerSpaceShip: db "/\'"
+	playerSpaceShip: db "/\"
 
 _DrawTopAndBottomSide:
     extern _WriteConsole
