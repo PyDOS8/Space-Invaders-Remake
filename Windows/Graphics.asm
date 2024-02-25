@@ -71,5 +71,5 @@ _DrawPlayer:
 
 	; Draw the player space ship
 	push playerSpaceShip
-	push 3
+	push 2
 	call _WriteConsole
