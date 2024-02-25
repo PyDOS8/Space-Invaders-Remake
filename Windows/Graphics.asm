@@ -73,3 +73,8 @@ _DrawPlayer:
 	push playerSpaceShip
 	push 2
 	call _WriteConsole
+
+	; Draw the blank line
+	push newLine
+	push 2
+	call _WriteConsole
