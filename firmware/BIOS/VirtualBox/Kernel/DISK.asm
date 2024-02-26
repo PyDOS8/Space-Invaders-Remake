@@ -2,7 +2,7 @@ bits 16
 section .text
  global _ResetDisk
  global _CheckDriveStatus
- global _WriteSectors
+ global _WriteBootloaderToSector
 
 _ResetDisk: ; This function will make the disk go to its original form
  MOV AH, 00h
@@ -14,8 +14,8 @@ _CheckDriveStatus: ; This function will check the drivers status (eg. full or em
  INT 13h
  RET
 
-_WriteSector: ; Write to the sector
- MOV AH, 03h
+_WriteBootloaderToSector: ; Write the bootloader to the Sector
+ 1MOV AH, 03h
  MOV CX, [0xFFFFFFFF]
  INT 13h
  RET
