@@ -15,7 +15,7 @@ _CheckDriveStatus: ; This function will check the drivers status (eg. full or em
  RET
 
 _WriteBootloaderToSector: ; Write the bootloader to the Sector
- 1MOV AH, 03h
+ MOV AH, 03h
  MOV CX, [0xFFFFFFFF]
  INT 13h
  RET
