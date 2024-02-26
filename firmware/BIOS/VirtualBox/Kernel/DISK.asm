@@ -15,6 +15,7 @@ _CheckDriveStatus: ; This function will check the drivers status (eg. full or em
  RET
 
 _WriteSector: ; Write to the sector
- MOV AH, 01h
+ MOV AH, 03h
+ MOV CX, [0xFFFFFFFF]
  INT 13h
  RET
