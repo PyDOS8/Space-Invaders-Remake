@@ -12,8 +12,3 @@
 ## Supported Firmware
 * UEFI
 * BIOS 
-
-# Supported BIOSes 
-* AMI(Later version)
-* Phonenix(Later version)
-* VirtualBox BIOS 
