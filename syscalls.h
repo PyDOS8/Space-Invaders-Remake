@@ -51,7 +51,7 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 		_asm {
 			".include 'interrupts.asm'"
 			"extern _SYSOUTPUT"
-		};
+		}
 	}
 	if (sys_number == 4) {
 		_asm {
