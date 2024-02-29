@@ -31,32 +31,32 @@
 void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 	if (sys_number == 48) {
 		_asm {
-			".include 'interrupts.asm"
-			"extern _READFILE";
+			.include 'interrupts.asm
+			extern _READFILE
 		}
 	}
 	if (sys_number == 40) {
 		_asm {
-			".include 'interrupts.asm'"
-			"extern _INPUTFILE"
+			.include 'interrupts.asm'
+			extern _INPUTFILE
 		};
 	}
 	if (sys_number == 1) {
 		_asm {
-			".include 'interrupts.asm'"
-			"extern _SYSEXIT"
+			.include 'interrupts.asm'
+			extern _SYSEXIT
 		};
 	}
 	if (sys_number == 30) {
 		_asm {
-			".include 'interrupts.asm'"
-			"extern _SYSOUTPUT"
+			.include 'interrupts.asm'
+			extern _SYSOUTPUT
 		}
 	}
 	if (sys_number == 4) {
 		_asm {
-			".include 'interrupts.asm'"
-			"extern _SYSINPUT"
+			.include 'interrupts.asm'
+			extern _SYSINPUT
 		};
 	}
 }
