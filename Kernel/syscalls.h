@@ -17,7 +17,7 @@
 
 // File Deletion
 #ifndef SYS_DELETE_FILE
-        #define SYS_FILE_DEL 10
+        #define SYS_FILE_DELETE 10
 #endif
 
 /* Program feedback */
