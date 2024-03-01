@@ -15,5 +15,4 @@
 
     _MoveToRAM PROC
         MOV [0XFFFF], [0X0000] ; RAM = Kernel
-        JMP OXFFFF  ; Go to RAM and execute instructions
     _MoveToR ENDP
