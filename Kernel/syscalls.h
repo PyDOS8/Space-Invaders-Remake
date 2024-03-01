@@ -67,8 +67,15 @@
 #ifndef SYS_DISK_PERMISSION_DELETE
 	#define SYS_DISK_PERMISSION_DELETE 23
 #endif
+
+// Disk read permission
 #ifndef SYS_DISK_PERMISSION_READ
 	#define SYS_DISK_PERMISSION_READ 34
+#endif
+
+// Disk load permission
+#ifndef SYS_DISK_LOAD_PERMISSION
+	#define SYS_DISK_LOAD_PERMISSION 69
 #endif
 
 void READ_SYSTEM_CALL_NUMBER() {
@@ -154,6 +161,13 @@ void READ_SYSTEM_CALL_NUMBER() {
 				.include "interrupts.asm"
 				extern _SYSDISKPERMISSIONSWRITE
 				call _SYSDISKPERMISSIONSWRITE
+			}
+	}
+	if(sys_number == SYS_DISK_LOAD_PERMISSION){
+			_asm{
+				.include "interrupts.asm"
+				extern _SYSDISKLOADPERMISSION
+				call   _SYSDISKLOADPERMISSION
 			}
 	}
 }
