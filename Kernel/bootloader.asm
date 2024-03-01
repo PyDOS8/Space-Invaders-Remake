@@ -20,7 +20,7 @@ ORG 0x00000000
     _CheckIfAddressIsEmpty ENDP 
 
     _LoadKernelIntoRamAndExecute PROC
-        MOV [0x00000000], [0XFFF]   ; RAM = Kernel
+        MOV [0x00000000], [0xFFF]   ; RAM = Kernel
         JMP 0x00000000
     _LoadKernelIntoRamAndExecute ENDP
 
