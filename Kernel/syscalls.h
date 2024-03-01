@@ -33,6 +33,14 @@
 	#define SYS_INPUT 4
 #endif 
 
+
+/* DISK */
+
+// Disk reading
+#ifndef SYS_DISK_READ
+   #define SYS_DISK_READ 2
+#endif
+
 void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 	if (sys_number == 48) {
 		_asm {
@@ -69,5 +77,11 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 			.include "interrupts.asm"
 			extern _SYSDELETEFILE
 		};
+	}
+	if(sys_number == 2){
+		_asm{
+			.include "interrupts.asm"
+			extern _SYSDISKREAD
+		}
 	}
 }
