@@ -9,13 +9,9 @@ ORG 0x00000000
         
         ; Check if the RAM is empty
         CMP CX, 0
-        JG _BootGame 
+        JG CX 
         JE _CheckIfAddressZeroIsEmpty
     _START ENDP
-
-    _BootGame PROC 
-        JMP CX
-    _BootGame ENDP
 
     _CheckIfAddressZeroIsEmpty PROC
         CMP [0x00000000], 0
