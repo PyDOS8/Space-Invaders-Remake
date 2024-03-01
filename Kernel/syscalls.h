@@ -78,7 +78,7 @@
 	#define SYS_DISK_LOAD_PERMISSION 69
 #endif
 
-void READ_SYSTEM_CALL_NUMBER() {
+void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 	if (sys_number == SYS_FILE_INPUT){
 		_asm {
 			.include 'interrupts.asm'
