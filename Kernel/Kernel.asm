@@ -1,3 +1,4 @@
+; This will move the Kernel into RAM 
 .CODE
   ORG 0x0000
   .TEXT
