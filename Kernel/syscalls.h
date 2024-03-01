@@ -5,13 +5,18 @@
 	#define SYS_FILE_INPUT 48
 #endif 
 
+// File Reading
+#ifndef SYS_FILE_READ
+        #define SYS_FILE_READ 56
+#endif
+
 // File output
 #ifndef SYS_FILE_OUTPUT  
 	#define SYS_FILE_OUTPUT 40
 #endif 
 
 // File Deletion
-#ifndef SYS_FILE_DEL
+#ifndef SYS_DELETE_FILE
         #define SYS_FILE_DEL 10
 #endif
 
@@ -51,7 +56,7 @@
 	#define SYS_DISK_WRITE 59
 #endif
 
-void READ_SYSTEM_CALL_NUMBER(int sys_number) {
+void READ_SYSTEM_CALL_NUMBER() {
 	if (sys_number == SYS_FILE_INPUT){
 		_asm {
 			.include 'interrupts.asm'
