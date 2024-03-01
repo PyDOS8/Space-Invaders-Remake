@@ -20,6 +20,20 @@
         #define SYS_FILE_DELETE 10
 #endif
 
+/* File Permissions */
+
+
+// File permission for writing a file
+#ifndef SYS_FILE_WRITE
+	#define SYS_FILE_WRITE 5
+#endif 
+
+
+// File permission for reading a file
+#ifndef SYS_FILE_READ
+	#define SYS_FILE_READ 50 
+#endif
+
 /* Program feedback */
 
 // Exiting
@@ -169,5 +183,33 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 				extern _SYSDISKLOADPERMISSION
 				call   _SYSDISKLOADPERMISSION
 			}
+	}
+	if(sys_number == SYS_FILE_DELETE){
+		_asm{
+			.include "interrupts.asm"
+			extern _SYSFILEDELETE
+			call _SYSFILEDELETE
+		}
+	}
+	if(sys_number == SYS_FILE_READ){
+		_asm{
+			.include "interrupts.asm"
+			extern _SYSFILEREAD
+			call _SYSFILEREAD
+		}
+	}
+	if(sys_number == SYS_FILE_OUTPUT){
+		_asm{
+			.include "interrupts.asm"
+			extern _SYSFILEOUTPUT
+			call _SYSFILEOUTPUT
+		}
+	}
+	if(sys_number == SYS_FILE_DELETE){
+		_asm{
+			.include "interrupts.asm"
+			extern _SYSFILEDELETE
+			call _SYSFILEDELETE
+		}
 	}
 }
