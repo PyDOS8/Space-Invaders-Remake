@@ -38,7 +38,6 @@
 	#define SYS_INPUT 4
 #endif 
 
-// 
 /* DISK */
 
 // Disk reading
@@ -54,6 +53,22 @@
 // Disk writing
 #ifndef SYS_DISK_WRITE
 	#define SYS_DISK_WRITE 59
+#endif
+
+
+// Change disk permissions
+
+// Disk writing permission
+#ifndef SYS_DISK_PERMISSION_WRITE 
+	#define SYS_DISK_PERMISSION_WRITE 49
+#endif
+
+// Disk deletion permission
+#ifndef SYS_DISK_PERMISSION_DELETE
+	#define SYS_DISK_PERMISSION_DELETE 23
+#endif
+#ifndef SYS_DISK_PERMISSION_READ
+	#define SYS_DISK_PERMISSION_READ 34
 #endif
 
 void READ_SYSTEM_CALL_NUMBER() {
@@ -119,5 +134,26 @@ void READ_SYSTEM_CALL_NUMBER() {
 			extern _SYSDISKDELETE
 			call _SYSDISKDELETE
 		}
+	}
+	if(sys_number == SYS_DISK_PERMISSION_DELETE){
+			_asm{
+				.include "interrupts.asm"
+				extern _SYSDISKPERMISSIONWRITE
+				call _SYSDISKPERMISSIONSWRITE
+			}
+	}
+	if(sys_number == SYS_DISK_PERMISSION_READ){
+			_asm{
+				.include "interrupts.asm"
+				extern _SYSDISKPERMISSIONREAD
+				call _SYSDISKPERMISSIONREAD
+			}
+	}
+	if(sys_number == SYS_DISK_PERMISSION_WRITE){
+			_asm{
+				.include "interrupts.asm"
+				extern _SYSDISKPERMISSIONSWRITE
+				call _SYSDISKPERMISSIONSWRITE
+			}
 	}
 }
