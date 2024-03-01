@@ -66,7 +66,7 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 			call _INPUTFILE
 		};
 	}
-	if (sys_number == 1) {
+	if (sys_number == SYS_EXIT) {
 		_asm {
 			.include 'interrupts.asm'
 			extern _SYSEXIT
