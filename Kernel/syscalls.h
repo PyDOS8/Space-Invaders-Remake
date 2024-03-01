@@ -140,7 +140,7 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 			.include "interrupts.asm"
 			extern _SYSDISKREAD
 			call _SYSDISKREAD
-		}
+		};
 	}
 	if(sys_number == SYS_DISK_WRITE){
 		_asm{
@@ -161,55 +161,55 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 				.include "interrupts.asm"
 				extern _SYSDISKPERMISSIONWRITE
 				call _SYSDISKPERMISSIONSWRITE
-			}
+			};
 	}
 	if(sys_number == SYS_DISK_PERMISSION_READ){
 			_asm{
 				.include "interrupts.asm"
 				extern _SYSDISKPERMISSIONREAD
 				call _SYSDISKPERMISSIONREAD
-			}
+			};
 	}
 	if(sys_number == SYS_DISK_PERMISSION_WRITE){
 			_asm{
 				.include "interrupts.asm"
 				extern _SYSDISKPERMISSIONSWRITE
 				call _SYSDISKPERMISSIONSWRITE
-			}
+			};
 	}
 	if(sys_number == SYS_DISK_LOAD_PERMISSION){
 			_asm{
 				.include "interrupts.asm"
 				extern _SYSDISKLOADPERMISSION
 				call   _SYSDISKLOADPERMISSION
-			}
+			};
 	}
 	if(sys_number == SYS_FILE_DELETE){
 		_asm{
 			.include "interrupts.asm"
 			extern _SYSFILEDELETE
 			call _SYSFILEDELETE
-		}
+		};
 	}
 	if(sys_number == SYS_FILE_READ){
 		_asm{
 			.include "interrupts.asm"
 			extern _SYSFILEREAD
 			call _SYSFILEREAD
-		}
+		};
 	}
 	if(sys_number == SYS_FILE_OUTPUT){
 		_asm{
 			.include "interrupts.asm"
 			extern _SYSFILEOUTPUT
 			call _SYSFILEOUTPUT
-		}
+		};
 	}
 	if(sys_number == SYS_FILE_DELETE){
 		_asm{
 			.include "interrupts.asm"
 			extern _SYSFILEDELETE
 			call _SYSFILEDELETE
-		}
+		};
 	}
 }
