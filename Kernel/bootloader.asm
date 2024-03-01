@@ -10,14 +10,24 @@ ORG 0x00000000
         ; Check if the RAM is empty
         CMP CX, 0
         JG _BootGame 
-        JE _LoadKernelIntoRAMAndExecute
-    ENDP
+        JE _CheckIfAddressZeroIsEmpty
+    _START ENDP
 
     _BootGame PROC 
         JMP CX
     _BootGame ENDP
 
+    _CheckIfAddressZeroIsEmpty PROC
+        CMP [0x00000000], 0
+        JG _LoadKernelIntoRamAndExecute
+        JE _StoreKernelIntoMemoryAddressZero
+
     _LoadKernelIntoRamAndExecute PROC
-        MOV [0XFFF], [0x00000000]
+        CMP 0x00
+        MOV [0XFFF], [0x00000000]   ; RAM = Kernel
         JMP 0XFFF
     _LoadKernelIntoRamAndExecute ENDP
+
+    _LoadKernelIntoMemoryAddressZero:
+        MOV [0x00000000], [0XFFFF]
+    _LoadKernelIntoMemoryAddressZero ENDP
