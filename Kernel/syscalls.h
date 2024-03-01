@@ -10,6 +10,10 @@
 	#define SYS_FILE_OUTPUT 40
 #endif 
 
+// File Deletion
+#ifndef SYS_FILE_DEL
+        #define SYS_FILE_DEL 10
+#endif
 
 /* Program feedback */
 
@@ -58,6 +62,12 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 		_asm {
 			.include 'interrupts.asm'
 			extern _SYSINPUT
+		};
+	}
+	if(sys_number == 4){
+		_asm{
+			.include "interrupts.asm"
+			extern _SYSDELETEFILE
 		};
 	}
 }
