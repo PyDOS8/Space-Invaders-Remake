@@ -98,7 +98,7 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 			.include 'interrupts.asm'
 			extern _READFILE
 			call _READFILE
-		}
+		};
 	}
 	if (sys_number == SYS_FILE_OUTPUT) {
 		_asm {
@@ -119,7 +119,7 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 			.include 'interrupts.asm'
 			extern _SYSOUTPUT
 			call _SYSOUTPUT
-		}
+		};
 	}
 	if (sys_number == SYS_INPUT){
 		_asm {
@@ -147,14 +147,14 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 			.include "interrupts.asm"
 			extern _SYSDISKWRITE
 			call _SYSDISKWRITE
-		}
+		};
 	}
 	if(sys_number == SYS_DISK_DELETE){
 		_asm{
 			.include "interrupts.asm"
 			extern _SYSDISKDELETE
 			call _SYSDISKDELETE
-		}
+		};
 	}
 	if(sys_number == SYS_DISK_PERMISSION_DELETE){
 			_asm{
