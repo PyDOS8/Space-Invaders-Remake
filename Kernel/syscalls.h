@@ -32,7 +32,7 @@
 void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 	if (sys_number == 48) {
 		_asm {
-			.include 'interrupts.asm
+			.include 'interrupts.asm'
 			extern _READFILE
 		}
 	}
