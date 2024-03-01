@@ -101,11 +101,18 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 			call _SYSDISKREAD
 		}
 	}
-	if(sys_number == 3){
+	if(sys_number == 59){
 		_asm{
-			include "interrupts.asm"
+			.include "interrupts.asm"
 			extern _SYSDISKWRITE
 			call _SYSDISKWRITE
+		}
+	}
+	if(sys_number == 67){
+		_asm{
+			.include "interrupts.asm"
+			extern _SYSDISKDELETE
+			call _SYSDISKDELETE
 		}
 	}
 }
