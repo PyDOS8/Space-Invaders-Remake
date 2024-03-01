@@ -23,7 +23,6 @@ ORG 0x00000000
         JE _StoreKernelIntoMemoryAddressZero
 
     _LoadKernelIntoRamAndExecute PROC
-        CMP 0x00
         MOV [0XFFF], [0x00000000]   ; RAM = Kernel
         JMP 0XFFF
     _LoadKernelIntoRamAndExecute ENDP
