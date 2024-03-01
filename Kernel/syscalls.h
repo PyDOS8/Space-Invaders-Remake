@@ -41,6 +41,12 @@
    #define SYS_DISK_READ 2
 #endif
 
+
+// Disk writing
+#ifndef SYS_DISK_WRITE
+	#define SYS_DISK_WRITE 3
+#endif 
+
 void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 	if (sys_number == 48) {
 		_asm {
@@ -90,5 +96,12 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 			extern _SYSDISKREAD
 			call _SYSDISKREAD
 		}
+	}
+	if(sys_number == 3){
+			_asm{
+				.include "interrupts.asm"
+				extern _SYSDISKWRITE
+				call _SYSDISKWRITE
+			}
 	}
 }
