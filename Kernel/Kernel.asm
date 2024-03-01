@@ -3,7 +3,7 @@
   .TEXT
 
     _start PROC 
-      ; Store the Kernel into RAM
+      ; Check if RAM is empty
       CMP [0XFFFF], 0
       JG _CheckNextMemoryAddresss
     _start ENDP 
