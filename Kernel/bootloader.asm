@@ -1,3 +1,4 @@
+; This will load the Kernel into memory 
 .CODE
 
 ORG 0x00000000
