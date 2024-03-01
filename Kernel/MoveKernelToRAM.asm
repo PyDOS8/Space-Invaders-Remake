@@ -7,6 +7,7 @@
       ; Check if RAM is empty
       CMP [0XFFFF], 0
       JG _CheckNextMemoryAddresss
+      JE _MoveToRAM 
     _start ENDP 
 
     _CheckNextMemoryAddress PROC
