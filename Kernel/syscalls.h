@@ -46,42 +46,49 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 		_asm {
 			.include 'interrupts.asm'
 			extern _READFILE
+			call _READFILE
 		}
 	}
 	if (sys_number == 40) {
 		_asm {
 			.include 'interrupts.asm'
 			extern _INPUTFILE
+			call _INPUTFILE
 		};
 	}
 	if (sys_number == 1) {
 		_asm {
 			.include 'interrupts.asm'
 			extern _SYSEXIT
+			call _SYSEXIT
 		};
 	}
 	if (sys_number == 30) {
 		_asm {
 			.include 'interrupts.asm'
 			extern _SYSOUTPUT
+			call _SYSOUTPUT
 		}
 	}
 	if (sys_number == 4) {
 		_asm {
 			.include 'interrupts.asm'
 			extern _SYSINPUT
+			call _SYSINPUT
 		};
 	}
 	if(sys_number == 10){
 		_asm{
 			.include "interrupts.asm"
 			extern _SYSDELETEFILE
+			call _SYSDELETEFILE
 		};
 	}
 	if(sys_number == 2){
 		_asm{
 			.include "interrupts.asm"
 			extern _SYSDISKREAD
+			call _SYSDISKREAD
 		}
 	}
 }
