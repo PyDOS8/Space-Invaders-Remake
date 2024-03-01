@@ -108,7 +108,7 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 			call _SYSDISKWRITE
 		}
 	}
-	if(sys_number == SYD_DISK_DELETE){
+	if(sys_number == SYS_DISK_DELETE){
 		_asm{
 			.include "interrupts.asm"
 			extern _SYSDISKDELETE
