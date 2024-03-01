@@ -41,11 +41,15 @@
    #define SYS_DISK_READ 2
 #endif
 
+// Disk deleting
+#ifndef SYS_DISK_DELETE
+	#define SYS_DISK_DELETE 67
+#endif
 
 // Disk writing
 #ifndef SYS_DISK_WRITE
-	#define SYS_DISK_WRITE 3
-#endif 
+	#define SYS_DISK_WRITE 59
+#endif
 
 void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 	if (sys_number == 48) {
@@ -98,10 +102,10 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 		}
 	}
 	if(sys_number == 3){
-			_asm{
-				.include "interrupts.asm"
-				extern _SYSDISKWRITE
-				call _SYSDISKWRITE
-			}
+		_asm{
+			include "interrupts.asm"
+			extern _SYSDISKWRITE
+			call _SYSDISKWRITE
+		}
 	}
 }
