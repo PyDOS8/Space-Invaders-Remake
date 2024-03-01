@@ -24,6 +24,7 @@
 	#define SYS_OUTPUT 30
 #endif 
 
+// Input
 #ifndef SYS_INPUT
 	#define SYS_INPUT 4
 #endif 
