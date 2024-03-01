@@ -73,42 +73,42 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 			call _SYSEXIT
 		};
 	}
-	if (sys_number == 30) {
+	if (sys_number == SYS_OUTPUT) {
 		_asm {
 			.include 'interrupts.asm'
 			extern _SYSOUTPUT
 			call _SYSOUTPUT
 		}
 	}
-	if (sys_number == 4) {
+	if (sys_number == SYS_INPUT){
 		_asm {
 			.include 'interrupts.asm'
 			extern _SYSINPUT
 			call _SYSINPUT
 		};
 	}
-	if(sys_number == 10){
+	if(sys_number == SYS_DELETE_FILE){
 		_asm{
 			.include "interrupts.asm"
 			extern _SYSDELETEFILE
 			call _SYSDELETEFILE
 		};
 	}
-	if(sys_number == 2){
+	if(sys_number == SYS_DISK_READ){
 		_asm{
 			.include "interrupts.asm"
 			extern _SYSDISKREAD
 			call _SYSDISKREAD
 		}
 	}
-	if(sys_number == 59){
+	if(sys_number == SYS_DISK_WRITE){
 		_asm{
 			.include "interrupts.asm"
 			extern _SYSDISKWRITE
 			call _SYSDISKWRITE
 		}
 	}
-	if(sys_number == 67){
+	if(sys_number == SYD_DISK_DELETE){
 		_asm{
 			.include "interrupts.asm"
 			extern _SYSDISKDELETE
