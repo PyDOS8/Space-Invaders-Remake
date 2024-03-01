@@ -52,14 +52,14 @@
 #endif
 
 void READ_SYSTEM_CALL_NUMBER(int sys_number) {
-	if (sys_number == 48) {
+	if (sys_number == SYS_FILE_INPUT){
 		_asm {
 			.include 'interrupts.asm'
 			extern _READFILE
 			call _READFILE
 		}
 	}
-	if (sys_number == 40) {
+	if (sys_number == SYS_FILE_OUTPUT) {
 		_asm {
 			.include 'interrupts.asm'
 			extern _INPUTFILE
