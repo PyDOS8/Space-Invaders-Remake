@@ -64,7 +64,7 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 			extern _SYSINPUT
 		};
 	}
-	if(sys_number == 4){
+	if(sys_number == 10){
 		_asm{
 			.include "interrupts.asm"
 			extern _SYSDELETEFILE
