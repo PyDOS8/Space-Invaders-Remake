@@ -15,8 +15,8 @@ ORG 0x00000000
 
     _CheckIfAddressZeroIsEmpty PROC
         CMP [0x00000000], 0
-        ;JG _LoadKernelIntoRamAndExecute
-        JE _StoreKernelIntoMemoryAddressZero
+        JG _LoadKernelIntoRamAndExecute
+        ;JE _StoreKernelIntoMemoryAddressZero
     _CheckIfAddressIsEmpty ENDP 
 
     _LoadKernelIntoRamAndExecute PROC
@@ -24,6 +24,6 @@ ORG 0x00000000
         JMP 0x00000000
     _LoadKernelIntoRamAndExecute ENDP
 
-    ;_LoadKernelIntoMemoryAddressZero:
+    ;_StoreKernelIntoMemoryAddressZero:
      ;  MOV [0XFFFF], [kernel_code]
-    ;_LoadKernelIntoMemoryAddressZero ENDP
+    ;_StoreKernelIntoMemoryAddressZero ENDP
