@@ -16,4 +16,4 @@
 
     _MoveToRAM PROC
         MOV [0XFFFF], [0X0000] ; RAM = Kernel
-    _MoveToR ENDP
+    _MoveToRAM ENDP
