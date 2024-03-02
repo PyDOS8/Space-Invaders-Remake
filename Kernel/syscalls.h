@@ -34,6 +34,11 @@
 	#define SYS_FILE_READ 50 
 #endif
 
+// File permissions for deleting a file
+#ifndef SYS_FILE_DELETE
+        #define SYS_FILE_DELETE 54
+#endif
+
 /* Program feedback */
 
 // Exiting
@@ -211,5 +216,12 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 			extern _SYSFILEDELETE
 			call _SYSFILEDELETE
 		};
+	}
+	if(sys_number == SYS_FILE_WRITE){
+		_asm{
+			.include "interrupts.asm"
+			extern _SYSWRITEFILE
+			call _SYSWRITEFILE
+		}
 	}
 }
