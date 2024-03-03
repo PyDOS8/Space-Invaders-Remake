@@ -52,6 +52,11 @@
 	#define SYS_OUTPUT 30
 #endif 
 
+// Detect mouse movement and move the cursor.
+#ifndef SYS_MOUSE_CURSOR_MOVED
+	#define SYS_MOUSE_CURSOR_MOVED 20
+#endif
+
 // Input
 #ifndef SYS_INPUT
 	#define SYS_INPUT 4
@@ -95,6 +100,13 @@
 // Disk load permission
 #ifndef SYS_DISK_LOAD_PERMISSION
 	#define SYS_DISK_LOAD_PERMISSION 69
+#endif
+
+/* BIOS Interrupts */
+
+// Output key when a key is pressed on the keyboard
+#ifndef SYS_KEY_PRESSED
+	#define SYS_KEY_PRESSED 45
 #endif
 
 void READ_SYSTEM_CALL_NUMBER(int sys_number) {
@@ -222,6 +234,13 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 			.include "interrupts.asm"
 			extern _SYSWRITEFILE
 			call _SYSWRITEFILE
+		}
+	}
+	if(sys_number == SYS_MOUSE_CURSOR_MOVED){
+		_asm{
+			.include "interrupts.asm";
+			extern _SYSMOUSECURSORMOVED
+			call _SYSMOUSECURSORMOVED
 		}
 	}
 }
