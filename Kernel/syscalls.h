@@ -102,6 +102,24 @@
 	#define SYS_DISK_LOAD_PERMISSION 69
 #endif
 
+
+/* Folder permissions */
+
+// Writing a folder
+#ifndef SYS_WRITE_FOLDER
+	#define SYS_WRITE_FOLDER 94
+#endif
+
+// Deleting a folder
+#ifndef SYS_DELETE_FOLDER
+	#define SYS_DELETE_FOLDER 345
+#endif
+
+// Reading a folder
+#ifndef SYS_READ_FOLDER
+	#define SYS_READ_FOLDER 495 
+#endif 
+
 /* BIOS Interrupts */
 
 // Output key when a key is pressed on the keyboard
@@ -238,9 +256,30 @@ void READ_SYSTEM_CALL_NUMBER(int sys_number) {
 	}
 	if(sys_number == SYS_MOUSE_CURSOR_MOVED){
 		_asm{
-			.include "interrupts.asm";
+			.include "interrupts.asm"
 			extern _SYSMOUSECURSORMOVED
 			call _SYSMOUSECURSORMOVED
 		}
 	}
+	if(sys_number == SYS_WRITE_FOLDER){
+		_asm{
+			.include "interrupts.asm"
+			extern _SYSWRITEFOLDER
+			call _SYSWRITEFOLDER
+		}
+	}
+	if(sys_number == SYS_DELETE_FOLDER){
+		_asm{
+			.include "interrupts.asm"
+			extern _SYSDELETEFOLDER
+			call _SYSDELETEFOLDER
+		}
+	}
+	if(sys_number == SYS_READ_FOLDER){
+		_asm{
+			.include "interrupts.asm"
+			extern _SYSREADFOLDER
+			call _SYSDELETEFOLDER
+		}
+	}	
 }
