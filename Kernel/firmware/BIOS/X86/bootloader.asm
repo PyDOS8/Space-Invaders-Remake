@@ -27,3 +27,4 @@ ORG 0x00000000
     ;_StoreKernelIntoMemoryAddressZero:
      ;  MOV [0XFFFF], [kernel_code]
     ;_StoreKernelIntoMemoryAddressZero ENDP
+; Assembly is the best.
