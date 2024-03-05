@@ -17,7 +17,7 @@ ORG 0x00000000
         CMP [0x00000000], 0
         JG _LoadKernelIntoRamAndExecute
         ;JE _StoreKernelIntoMemoryAddressZero
-    _CheckIfAddressIsEmpty ENDP 
+    _CheckIfAddressZeroIsEmpty ENDP 
 
     _LoadKernelIntoRamAndExecute PROC
         MOV [0x00000000], [0xFFF]   ; RAM = Kernel
