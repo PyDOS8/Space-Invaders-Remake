@@ -34,6 +34,23 @@
   #define SYS_CAN_WRITE_FILE 5
 #endif 
 
+/* Folder Operations */
+
+/* Deleting a folder */
+#ifndef SYS_CAN_DELETE_FOLDER
+  #define SYS_CAN_DELETE_FOLDER 49
+#endif
+
+// Writing a folder
+#ifndef SYS_CAN_WRITE_FOLDER
+  #define SYS_CAN_WRITE_FOLDER 45
+#endif
+
+// Opening a folder
+#ifndef SYS_CAN_OPEN_FOLDER
+  #define SYS_Can_OPEN_FOLDER 46
+#endif
+
 void READ_SYSTEM_CALL_NUMBER(int syscall){
     if(syscall == SYS_WRITE_FILE){
         UEFI_SYS_WRITE_FILE();        
@@ -49,5 +66,11 @@ void READ_SYSTEM_CALL_NUMBER(int syscall){
     }
     if(syscall == SYS_CAN_WRITE_FILE){
       UEFI_SYS_CAN_WRITE_FILE();
+    }
+    if(SYS_CAN_DELETE_FOLDER){
+      UEFI_SYS_CAN_DELETE_FOLDER();
+    }
+    if(SYS_CAN_WRITE_FOLDER){
+      UEFI_SYS_CAN_WRITE_FOLDER();
     }
 }
