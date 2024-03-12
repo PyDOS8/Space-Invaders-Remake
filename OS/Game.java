@@ -55,7 +55,9 @@ public class Main
     clearScreen();
 	System.out.println("To Leave\t press 2");
 	int input = sc.nextInt();
-	else {Home();}
+	if(input == 2){ 
+	    Home();
+	}
 }
     public static void Credits() {
         String line = "";
