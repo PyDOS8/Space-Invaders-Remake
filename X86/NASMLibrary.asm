@@ -58,7 +58,7 @@
  extern _iostream
  MOV ECX, %1
  MOV EDX, %2
- call _iostream
+ call _cin
 %endmacro
 
 %macro ROUND_UP 2
